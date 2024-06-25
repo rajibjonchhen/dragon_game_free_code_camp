@@ -23,7 +23,15 @@ main{
 
 a{
    text-decoration: none;
+}
 
+.back-btn{
+    text-decoration: none;
+    background-color: var(--dark-yellow);
+    color:var(--dark-blue);
+    width: 200px;
+    text-align: center;
+    
 }
 .my-button{
     color : var(--dark-blue);
@@ -34,5 +42,4 @@ a{
     max-width: 400px;
     border-radius: 5px;
    font-weight: bold;
-
 }
