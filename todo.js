@@ -24,7 +24,10 @@ const addOrUpdateTask = () => {
 
   if (dataArrIndex === -1) {
     taskData.unshift(taskObj);
+  } else {
+    taskData[dataArrIndex] = taskObj;
   }
+
   updateTaskContainer()
   reset()
 };
@@ -39,13 +42,39 @@ const updateTaskContainer = () => {
           <p><strong>Title:</strong> ${title}</p>
           <p><strong>Date:</strong> ${date}</p>
           <p><strong>Description:</strong> ${description}</p>
-          <button type="button" class="btn">Edit</button>
-          <button type="button" class="btn">Delete</button> 
+          <button onclick="editTask(this)" type="button" class="btn">Edit</button>
+          <button onclick="deleteTask(this)" type="button" class="btn">Delete</button> 
         </div>
       `)
     }
   );
 };
+
+
+const deleteTask = (buttonEl) => {
+  const dataArrIndex = taskData.findIndex(
+    (item) => item.id === buttonEl.parentElement.id
+  );
+
+  buttonEl.parentElement.remove();
+  taskData.splice(dataArrIndex, 1);
+}
+
+const editTask = (buttonEl) => {
+    const dataArrIndex = taskData.findIndex(
+    (item) => item.id === buttonEl.parentElement.id
+  );
+
+  currentTask = taskData[dataArrIndex];
+
+  titleInput.value = currentTask.title;
+  dateInput.value = currentTask.date;
+  descriptionInput.value = currentTask.description;
+
+  addOrUpdateTaskBtn.innerText = "Update Task";
+
+  taskForm.classList.toggle("hidden");  
+}
 
 const reset = () => {
   titleInput.value = "";
@@ -61,7 +90,9 @@ openTaskFormBtn.addEventListener("click", () =>
 
 closeTaskFormBtn.addEventListener("click", () => {
   const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
-  if (formInputsContainValues) {
+  const formInputValuesUpdated = titleInput.value !== currentTask.title || dateInput.value !== currentTask.date || descriptionInput.value !== currentTask.description;
+
+  if (formInputsContainValues && formInputValuesUpdated) {
     confirmCloseDialog.showModal();
   } else {
     reset();
@@ -80,3 +111,10 @@ taskForm.addEventListener("submit", (e) => {
 
   addOrUpdateTask();
 });
+
+const myTaskArr = [
+  { task: "Walk the Dog", date: "22-04-2022" },
+  { task: "Read some books", date: "02-11-2023" },
+  { task: "Watch football", date: "10-08-2021" },
+];
+
