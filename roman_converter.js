@@ -2,20 +2,21 @@ const convertBtn = document.getElementById("convert-btn")
 const result = document.getElementById("output")
 const input = document.getElementById("number");
 
-const conversionTable = [{1000:M},
-{900:CM},
-{500:D},
-{400:CD},
-{100:C},
-{90:XC},
-{50:L},
-{40:XL},
-{10:X},
-{9:IX},
-{5:V},
-{4:IV},
-{1:I}
-]
+const conversionTable = {
+"1000":M,
+"500":"D",
+"900":"CM",
+"400":"CD",
+"100":"C",
+"90":"XC",
+"50":"L",
+"40":"XL",
+"10":"X",
+"9":"IX",
+"5":"V",
+"4":"IV",
+"1":"I"
+}
 
 const getInput = (e) => {
   e.preventDefault()
