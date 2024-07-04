@@ -3,37 +3,47 @@ const result = document.getElementById("output")
 const input = document.getElementById("number");
 
 const conversionTable = {
-"1000":M,
-"500":"D",
-"900":"CM",
-"400":"CD",
-"100":"C",
-"90":"XC",
-"50":"L",
-"40":"XL",
-"10":"X",
-"9":"IX",
-"5":"V",
-"4":"IV",
-"1":"I"
+  M:1000,
+  CM:900,
+  D:500,
+  CD:400,
+  C:100,
+  XC:90,
+  L:50,
+  XL:40,
+  X:10,
+  IX:9,
+  V:5,
+  IV:4,
+  I:1
 }
+
+let roman = ""
 
 const getInput = (e) => {
   e.preventDefault()
   const inputInt = parseInt(input.value)
+    result.style.color = "red"
   if(!input.value){
-    alert("Please enter a valid number")
+    result.innerText = "Please enter a valid number"
   } else if( inputInt < 0){
-    alert("Please enter a number greater than or equal to 1")
+    result.innerText = "Please enter a number greater than or equal to 1"
   }else if(inputInt > 3999){
-    alert("Please enter a number less than or equal to 3999")
+    result.innerText= "Please enter a number less than or equal to 3999"
   }else{
+    result.style.color = "black"
     convertToRoman(inputInt)
   }
 }
   convertBtn.addEventListener("click", getInput);
 
   const convertToRoman = (numb) => {
-    console.log("convertToRoman", numb)
-    
+   for ( let i in conversionTable ) {
+    while ( numb >= conversionTable[i] ) {
+      roman += i
+      numb -= conversionTable[i];
+    }
+  }
+  result.innerText =  roman
+   roman = "";
   }
