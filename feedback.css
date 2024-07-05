@@ -1,0 +1,64 @@
+body{
+    background: linear-gradient(217deg, rgb(46,46,90, 0.8), rgba(255,0,0,0) 70.71%);
+    color:white;
+  }
+  
+  header{
+    text-align:center;
+    margin: 20px auto;
+  }
+  
+  .item{
+    margin: 20px auto;
+  }
+  
+  #title{
+    margin:auto;
+  }
+  
+  #description{
+    margin:auto;
+  }
+  
+  #survey-form{
+  background-color:rgb(41,41,71, 0.9);
+  padding:20px;
+  width:60%;
+  max-width:600px;
+  margin:auto;
+  border-radius:5px;
+  }
+  
+  label{
+    margin-left:0px;
+    width:100%;
+    display:flex;
+    align-items:center;
+  }
+  
+  input, textarea, select{
+  min-height:2em;
+  }
+  
+  .full-width{
+  width:100%;
+  margin-top:5px;
+  }
+  
+  .text-area{
+    min-height: 120px;
+    width: 100%;
+    padding: 0.625rem;
+    resize: vertical;
+  }
+  
+  input[type="submit"]{
+    background-color:rgb(54,175,101);
+    color:white;
+    border:none;
+  border-radius:0px;
+    min-height: 2rem;
+    min-width: 2rem;
+  }
+  
+  

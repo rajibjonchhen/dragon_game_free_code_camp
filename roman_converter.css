@@ -1,0 +1,60 @@
+:root{
+    --bgDark : #03002e;
+    --textColor : white;
+  }
+  *{
+    font:10px
+  }
+  
+  body{ background-color:var(--bgDark);
+    color:var(--textColor);
+    margin:0px auto;
+    width:100%;
+  }
+   
+  main{
+    margin:3rem auto;
+    width:90%;
+    min-width:300px;
+  }
+  h1{
+    font-size: 2rem;text-align:center;
+  }
+  form{
+    margin:0px auto;
+    width:80%;
+    text-align:center;
+  }
+  label{
+    display:block;
+    font-size:1.2rem;
+    margin:0 0 1.5rem 0
+  }
+  input,button, #output{
+    width:100%;
+    margin:0.5rem auto;
+    font-size:1.5rem;
+    font-weight:bold;
+    padding:5px;
+    text-align:center;
+    min-height:3rem;
+  }
+  
+  input{
+    border-radius: 15px 0;
+  }
+  
+  button{
+    border-radius:0 15px;
+    color:rgb(255, 170, 0);
+    background-color:var(--bgdark);
+    border:1px solid white;
+  }
+  
+  #output{
+    background-color: white;
+    color:black;
+    min-height:3rem;
+    border-radius: 15px 0;
+    box-sizing:border-box;
+  }
