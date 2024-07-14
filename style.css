@@ -35,11 +35,19 @@ a{
 }
 .my-button{
     color : var(--dark-blue);
-    background-color: var(--dark-yellow);
+    background-color: var(--light-yellow);
     margin: 10px auto;
     padding: 10px;
     display :block;
     max-width: 400px;
     border-radius: 5px;
    font-weight: bold;
+   box-sizing: border-box;
+}
+
+.my-button:hover{
+  background-color: var(--dark-yellow);
+  transform: scale(1.1);
+  color:white;
+  
 }
