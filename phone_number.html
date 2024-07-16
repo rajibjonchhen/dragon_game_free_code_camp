@@ -2,19 +2,24 @@
     <html lang="en">
       <head>
         <meta charset = "utf-8"/>
-        <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="phone_number.css"/>
         <title>telephone number validation</title>
         </head>
         <body>
             <main>
                 <div>
-                  <form>
-                      <input id=""/>
-                        <button>Check</button>
-                        <button>Clear</button>
-                  </form>
+              <h1>Please provide a phone number</h1>
+                
+           <form>
+              <input id="user-input"/>
+              <button type="clear"  class="bg-green" id="check-btn">Check</button>
+              <button type="clear" class="bg-red" id="clear-btn">Clear</button>
+                    
+       </form>            
+       <div id="results-div">
+        </div>
                 </div>
               </main>
-            <script src="script.js"></script>
+            <script src="phone_number.js"></script>
         </body>
       </html>
