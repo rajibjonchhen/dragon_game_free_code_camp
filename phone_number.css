@@ -13,9 +13,16 @@
     background-color:var(--bgColorGreen);
     color:var(--bgColor);
   }
-  
+  .camera{
+      border: .5rem solid white;
+      width:2%;
+      border-radius: 50%;
+      margin:auto;
+  }
+
+
   main{
-    margin: 3rem auto;
+    margin: 0 auto;
    background-color:var(--bgColorPurple);
     padding:1rem;
     border-radius:1.8rem;
@@ -23,11 +30,12 @@
     height:60rem;
   }
   
-  main>div{
+  .screen{
     width:33rem;
-    height:58rem;
+    height:55rem;
     padding:1rem;
     border-radius:1.5rem;background-color:white;
+    margin-top: 1rem;
   }
   h1{
     font-size:2rem;
@@ -59,4 +67,20 @@
   }
   .bg-red{
     background-color:rgba(202,010,10,0.5)
+  }
+  
+  #results-div{
+  margin-top:1rem;
+  overflow:scroll;
+    height:35rem;
+  }
+  
+  .valid{
+    color:green;
+    font-size:2rem;
+  }
+  
+  .invalid{
+    font-size:2rem;
+    color:red;
   }
