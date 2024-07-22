@@ -94,7 +94,6 @@ class CheckPoint {
   }
 };
 
-
 const player = new Player();
 
 const platformPositions = [
@@ -116,7 +115,6 @@ const platforms = platformPositions.map(
   (platform) => new Platform(platform.x, platform.y)
 );
 
-
 const checkpointPositions = [
   { x: 1170, y: proportionalSize(80), z: 1 },
   { x: 2900, y: proportionalSize(330), z: 2 },
@@ -135,7 +133,9 @@ const animate = () => {
     platform.draw();
   });
 
-
+  checkpoints.forEach(checkpoint => {
+    checkpoint.draw();
+  });
 
   player.update();
 
@@ -150,9 +150,18 @@ const animate = () => {
       platforms.forEach((platform) => {
         platform.position.x -= 5;
       });
+
+      checkpoints.forEach((checkpoint) => {
+        checkpoint.position.x -= 5;
+      });
+    
     } else if (keys.leftKey.pressed && isCheckpointCollisionDetectionActive) {
       platforms.forEach((platform) => {
         platform.position.x += 5;
+      });
+
+      checkpoints.forEach((checkpoint) => {
+        checkpoint.position.x += 5;
       });
     }
   }
@@ -184,6 +193,12 @@ const animate = () => {
       player.velocity.y = gravity;
     };
   });
+
+
+  checkpoints.forEach((checkpoint, index, checkpoints) => {
+
+  });
+
 }
 
 
@@ -230,6 +245,14 @@ const startGame = () => {
   startScreen.style.display = "none";
   animate();
 }
+
+const showCheckpointScreen = (msg) => {
+  checkpointScreen.style.display = "block";
+  checkpointMessage.textContent = msg;
+  if (isCheckpointCollisionDetectionActive) {
+    setTimeout(() => (checkpointScreen.style.display = "none"), 2000);
+  }
+};
 
 startBtn.addEventListener("click", startGame);
 
