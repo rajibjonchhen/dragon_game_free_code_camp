@@ -14,8 +14,8 @@ let diceValuesArr = [];
 let isModalShowing = false;
 let score = 0;
 let total = 0;
-let round = 1; 
-let rolls = 0; 
+let round = 1;
+let rolls = 0;
 
 const rollDice = () => {
   diceValuesArr = [];
@@ -84,6 +84,8 @@ const getHighestDuplicates = (arr) => {
   updateRadioOption(5, 0);
 };
 
+
+
 const resetRadioOptions = () => {
   scoreInputs.forEach((input) => {
     input.disabled = true;
@@ -95,7 +97,24 @@ const resetRadioOptions = () => {
   });
 };
 
+const resetGame = () => {
+  diceValuesArr = [0, 0, 0, 0, 0];
+  score = 0;
+  round = 1;
+  rolls = 0;
 
+  listOfAllDice.forEach((dice, index) => {
+    dice.textContent = diceValuesArr[index];
+  });
+
+  totalScore.textContent = score;
+  scoreHistory.innerHTML = "";
+
+  currentRoundRolls.textContent = rolls;
+  currentRound.textContent = round;
+
+  resetRadioOptions();
+};
 
 rollDiceBtn.addEventListener("click", () => {
   if (rolls === 3) {
@@ -106,6 +125,7 @@ rollDiceBtn.addEventListener("click", () => {
     rollDice();
     updateStats();
     getHighestDuplicates(diceValuesArr);
+  
   }
 });
 
@@ -142,8 +162,8 @@ keepScoreBtn.addEventListener("click", () => {
     if (round > 6) {
       setTimeout(() => {
         alert(`Game Over! Your total score is ${score}`);
+        resetGame();
       }, 500);
-
     }
   } else {
     alert("Please select an option or roll the dice");
