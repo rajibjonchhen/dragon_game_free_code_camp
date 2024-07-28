@@ -95,6 +95,8 @@ const resetRadioOptions = () => {
   });
 };
 
+
+
 rollDiceBtn.addEventListener("click", () => {
   if (rolls === 3) {
     alert("You have made three rolls this round. Please select a score.");
@@ -137,7 +139,12 @@ keepScoreBtn.addEventListener("click", () => {
     updateStats();
     resetRadioOptions();
     updateScore(selectedValue, achieved);
-    
+    if (round > 6) {
+      setTimeout(() => {
+        alert(`Game Over! Your total score is ${score}`);
+      }, 500);
+
+    }
   } else {
     alert("Please select an option or roll the dice");
   }
