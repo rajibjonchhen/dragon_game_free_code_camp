@@ -7,6 +7,8 @@
     --light-pink: #ffadad;
     --dark-red: #850000;
     --light-green: #acd157;
+    --gold: #9f8f4f;
+
   }
   
   body {
@@ -15,7 +17,7 @@
     background-color: var(--fcc-blue);
     color: var(--light-grey);
   }
-main{
+main.myMain{
     margin : auto;
     width: 100%;
     text-align: center;
@@ -25,14 +27,6 @@ a{
    text-decoration: none;
 }
 
-.back-btn{
-    text-decoration: none;
-    background-color: var(--dark-yellow);
-    color:var(--dark-blue);
-    width: 200px;
-    text-align: center;
-    
-}
 .my-button{
     color : var(--dark-blue);
     background-color: var(--light-yellow);

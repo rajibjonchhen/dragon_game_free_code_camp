@@ -1,0 +1,25 @@
+:root {
+    --light-grey: #f5f6f7;
+    --dark-blue: #0a0a23;
+    --fcc-blue: #1b1b32;
+    --light-yellow: #fecc4c;
+    --dark-yellow: #feac32;
+    --light-pink: #ffadad;
+    --dark-red: #850000;
+    --light-green: #acd157;
+    --gold: #9f8f4f;
+
+  }
+  
+a>button[name="back-btn"].back-btn{
+  font-size:1rem;
+  padding:0.5rem;
+  border-radius:1rem;
+  border:none;
+  color:white;
+  background-color:var(--gold);
+  margin-top:1rem ;
+  width:12rem;
+  height:2rem;
+  background-image: none;
+}
