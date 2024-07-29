@@ -131,7 +131,36 @@ const resetGame = () => {
   resetRadioOptions();
 };
 
+    const checkForStraights = (array) => {
+    // Sort the array in ascending order
+    const sortedArray = array.slice().sort((a, b) => a - b);
+    
+    // Remove duplicates
+    const uniqueSortedArray = [...new Set(sortedArray)];
 
+    // Helper function to check consecutive numbers
+    const isConsecutive = (arr) => arr.every((val, i, a) => !i || (val === a[i - 1] + 1));
+    
+    // Check for large straight (five consecutive numbers)
+    if (uniqueSortedArray.length === 5 && isConsecutive(uniqueSortedArray)) {
+        updateRadioOption(3, 30); // small straight
+        updateRadioOption(4, 40); // Large straight
+        return;
+    }
+    
+    // Check for small straight (four consecutive numbers)
+    if (uniqueSortedArray.length >= 4) {
+        for (let i = 0; i <= uniqueSortedArray.length - 4; i++) {
+            if (isConsecutive(uniqueSortedArray.slice(i, i + 4))) {
+                updateRadioOption(3, 30); // Small straight
+                return;
+            }
+        }
+    }
+
+    // If no straight is found
+    updateRadioOption(5, 0); // No straight
+}
 
 rollDiceBtn.addEventListener("click", () => {
   if (rolls === 3) {
