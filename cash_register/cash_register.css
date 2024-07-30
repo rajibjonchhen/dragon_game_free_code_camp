@@ -1,0 +1,123 @@
+:root {
+    --light-grey: #f5f6f7;
+    --dark-blue: #0a0a23;
+    --fcc-blue: #1b1b32;
+    --light-yellow: #fecc4c;
+    --dark-yellow: #feac32;
+    --light-pink: #ffadad;
+    --dark-red: #850000;
+    --light-green: #acd157;
+    --gold: #9f8f4f;
+
+  }
+  
+  body {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    background-color: var(--fcc-blue);
+    color: var(--light-grey);
+  }
+main{
+    margin : auto;
+    width: 100%;
+    text-align: center;
+    min-width: 300px;
+}
+
+a{
+   text-decoration: none;
+}
+
+.monitor{
+    color : var(--dark-blue);
+    background-color: var(--light-yellow);
+    margin: 10px auto;
+    padding: 5px;
+    display :block;
+    max-width: 300px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.screen{
+    color : var(--dark-blue);
+    background-color: var(--light-grey);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    max-width: 300px;
+    height: 150px;
+
+}
+.items{
+    color : var(--dark-blue);
+    background-color: var(--light-grey);
+    margin: auto;
+    padding: 3px;
+    display :block;
+    width: 50%;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.bill{
+    color : var(--dark-blue);
+    background-color: var(--light-grey);
+    margin: 5px auto;
+    padding: 3px;
+    display :block;
+    width: 50%;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.keyboard{    
+height: 100px;
+transform: perspective(10px) rotateX(1deg);
+color : var(--dark-blue);
+background-color: var(--light-yellow);
+margin: 10px auto;
+padding: 10px;
+max-width: 200px;
+border-radius: 5px;
+font-weight: bold;
+box-sizing: border-box;
+display: flex;
+flex-wrap: wrap;
+border-bottom:  5px solid var(--dark-yellow);
+}
+
+.key{
+    width: 0.5rem;
+    height: 0.5rem;
+    font-size: 6px;
+    background-color: black;
+    color:white;
+    margin: 0 0.2rem 0.2rem;
+    padding:0.1rem;
+    border-radius: 3px;
+    box-shadow: 0 0 1px 1px grey;
+}
+.items{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+.item{
+    width: 0.5rem;
+    height: 0.5rem;
+    font-size: 10px;
+    background-color: black;
+    color:white;
+    margin: 0 0.5rem 0.5rem;
+    padding:0.1rem;
+    border-radius: 3px;
+}
+
+.billItem{
+    font-size: 0.6rem;
+    text-decoration: none;
+    list-style: none;
+    margin-bottom: 5px;;
+}
